@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="">Employee Registration</h1>
+      <form action="{% url 'update' employee.id%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="first_name"
+            placeholder="Enter First Name"
+            value="{{employee.first_name}}"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="last_name"
+            placeholder="Enter Last Name"
+            value="{{employee.last_name}}"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input
+            type="text"
+            class="form-control"
+            name="department"
+            value="{{employee.department}}"
+            placeholder="Enter Department Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="position">Position</label>
+          <input
+            type="text"
+            class="form-control"
+            name="position"
+            value="{{employee.position}}"
+            placeholder="Enter Position of Employee"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="date_of_birth">Date of Birth (DOB)</label>
+          <input
+            type="date"
+            class="form-control"
+            name="date_of_birth"
+            value="{{employee.date_of_birth | date:'Y-m-d'}}"
+            placeholder="Enter Date of Birth"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="date_joined">Date of Joining (DOJ)</label>
+          <input
+            type="date"
+            class="form-control"
+            name="date_joined"
+            value="{{employee.date_joined | date:'Y-m-d'}}"
+            placeholder="Enter Date of Joining"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary Allocation</label>
+          <input
+            type="number"
+            class="form-control"
+            name="salary"
+            min="0"
+            value="{{employee.salary}}"
+            placeholder="Enter Salary Allocation"
+            required
+          />
+        </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="is_full_time"
+            value="{{employee.is_full_time}}"
+          />
+          <label class="form-check-label" for="is_full_time">
+            Working Type (Full / Part)
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+            value="{{employee.email}}"
+            placeholder="Enter Email Address"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone_number">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            name="phone_number"
+            value="{{employee.phone_number}}"
+            placeholder="Enter Phone Number"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea
+            class="form-control"
+            name="address"
+            value="{{employee.address}}"
+            placeholder="Enter Address"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            class="form-control"
+            name="city"
+            value="{{employee.city}}"
+            placeholder="Enter City"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input
+            type="text"
+            class="form-control"
+            name="state"
+            value="{{employee.state}}"
+            placeholder="Enter State"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="last_performance_review">Last Performance Review</label>
+          <input
+            type="date"
+            class="form-control"
+            name="last_performance_review"
+            value="{{employee.last_performance_review | date:'Y-m-d'}}"
+            placeholder="Enter Performance Review"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Records</button>
+        <a href="/?page=records"
+          ><button type="button" class="btn btn-info">View Records</button></a
+        >
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

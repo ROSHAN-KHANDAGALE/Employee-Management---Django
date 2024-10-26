@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Employee Registration</h1>
+      <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="first_name">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="first_name"
+              placeholder="Enter First Name"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="last_name">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="last_name"
+              placeholder="Enter Last Name"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="department">Department</label>
+            <input
+              type="text"
+              class="form-control"
+              name="department"
+              placeholder="Enter Department Name"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="position">Position</label>
+            <input
+              type="text"
+              class="form-control"
+              name="position"
+              placeholder="Enter Position of Employee"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="date_of_birth">Date of Birth (DOB)</label>
+            <input
+              type="date"
+              class="form-control"
+              name="date_of_birth"
+              placeholder="Enter Date of Birth"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="date_joined">Date of Joining (DOJ)</label>
+            <input
+              type="date"
+              class="form-control"
+              name="date_joined"
+              placeholder="Enter Date of Joining"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="salary">Salary Allocation</label>
+            <input
+              type="number"
+              class="form-control"
+              name="salary"
+              min="0"
+              step="any"
+              placeholder="Enter Salary Allocation"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="is_full_time"
+            />
+            <label class="form-check-label" for="is_full_time">
+              Working Type (Full / Part)
+            </label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+              placeholder="Enter Email Address"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="phone_number">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              name="phone_number"
+              placeholder="Enter Phone Number"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="address">Address</label>
+            <textarea
+              class="form-control"
+              name="address"
+              placeholder="Enter Address"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="city">City</label>
+            <input
+              type="text"
+              class="form-control"
+              name="city"
+              placeholder="Enter City"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="state">State</label>
+            <input
+              type="text"
+              class="form-control"
+              name="state"
+              placeholder="Enter State"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="last_performance_review">Last Performance Review</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              name="last_performance_review"
+              placeholder="Enter Performance Review"
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/?page=records">
+          <button type="button" class="btn btn-info">View Records</button>
+        </a>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
